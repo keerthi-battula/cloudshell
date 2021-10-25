@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "wise-cycling-321405",
+  "private_key_id": "6128b0abaaa2f141585071c948d69990280a3bd6",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEuwIBADANBgkqhkiG9w0BAQEFAASCBKUwggShAgEAAoIBAQCY/vcpBW6LKirm\nOd6WVM/oMlv/Q/0Ez5xAPkyanqH8hIU+Q9LOPba6iO/t8P9OTQvlrSlHVj6obW/o\n5mcdazvAHtevh5BcPqgWMQ/srJgKZvqDIutBRyMduTFaIyzISgNyHPfbcXykxSFn\nRMMlUj5dsu8n12dK+q8zIuaVW7JHFVz28EgKUjBHfZ+4SIRbKBGRM3zFVdLw5OXT\nyPZ1w4BoTgPL4GirxaelZXYnEyoUN0MI+sLgsHmFiUNWr3BvDLrCVu/OMRtrc4T2\nF6Bvd3Pkw1PkTNwve+OOqk0OS4uza+lVwJzr53FOpxeG6mBm4F1/fJ9XkRDAfdXi\nGhbJsDHzAgMBAAECggEABCATCJtsyYc61+SLw9CIOJhFbCkbpR0QXZhKCkmogxdA\nEBeirMzAmBM091zHrYdQGk9kedfX+0Rtv43/p5OEIKAhEn3ckete+3yZxtJsJd+n\n9cNwkqm5E/llD/g7bv0b6BN8e85gEE6ACF/nLFYlRPNPSOsHp6xoIlm/D09R8i7h\n6Ci+FVrwon1y+mmjyhDytPfl3rbsidU2eMR68wv2SbNYOdwpReWqkw9GqHj1ZSq5\nb8fo7cprlP2Q2Hb1E+230+/Issi8UnuxrExPo6DKtMxY3VWczM6nnalfW+F9OXoG\nNIgdelmIcn7tq7q7UYmOSCEfc35K+sui/iw+LbxVtQKBgQDJOK9PT43RyDrgthEW\nru9KZAN4uWJY7akbuY1FhbjKsrcZNnHfiFcjXI8/ewf0SybdzHsjugd6DGIhascZ\ndzKQCV2Fc8brpW/Uy5NdTikLeNZhrR0dtAHRrH6NxdXxIb/3uGcT2xNxJ/+8fRrm\nTYg/ELSsDcK6QLM60RVuEt0bRwKBgQDCpWbDFaBP+g4Tccr6dOerTRZW2kanQwbl\njudup9n0u7Z6zR8oFNohYL9dbqjvVNT4Ho/F9i3y/5XdsqAhWpE7KEpvrK598VQG\nZNf6LqxdnZ9ueS2cB4PNQZHOI5U+HiyTnWPoHr+h3Ybdt6ARiUZMDfL+fAL5Hhpm\n4gRkDH+x9QKBgBt4bJ6EOtU/46HX2T9ihHKAcuThUibX0zVgwIOUPOUXPt3nS+Z7\nY4IFWd0Nu8lDFTxEdS8sb2bfF+p9/E5isnltfeIBK0/yVvETFbwwNnRFe+b7zjTG\n5VStmt1Z+9oehGmaOCBC0UWqc0RVQ/3a6dXKPxAaFNJ+kLlf3/AWDS9zAn8BhUlI\nPOMDvPBfNoRfcIpezDtgclQa+msTYApu0uDhCJZkXzXfGkqZ+CeGk1a+h+siBRsa\ncNHrFBQXp02Y9RwtWiM6vB6g3UHKyv7k9XhjQtf8BPZWQbjF4b1B3wVLdvDiNliR\nd6wHl7N2B/k4KdpivbkoQ8/CInoSU7G1FmPpAoGBALTDcPY/mtnm1yH7QLu6pUS4\nYa+2LwbEACRBYJcT11cFkGiSQuHsi2H0oDHNWSdFHp174cRMZeinQma9gGG/0afp\nwY0y2XCrbwD/aaLY2J5QTYVY5AbKQLQYNjN8UtsCvKLDjrgcTotoWoI8xQgdx3xy\nC1h50g5daL/qF/yCHrDA\n-----END PRIVATE KEY-----\n",
+  "client_email": "helm-28@wise-cycling-321405.iam.gserviceaccount.com",
+  "client_id": "108453558772384595052",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/helm-28%40wise-cycling-321405.iam.gserviceaccount.com"
+}

@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sre-bootcamp
+  labels:
+    app: sre-bootcamp
+spec:
+  selector:
+    matchLabels:
+      app: sre-bootcamp
+      tier: web
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: sre-bootcamp
+        tier: web
+    spec:
+      containers:
+      - name: my-cluster
+        image: gcr.io/careful-mapper-323409/my-web-server-version2
+        resources:
+          limits:
+            cpu: "1"
+          requests:
+            cpu: "0.5"
+        ports:
+        - containerPort: 80
+        resources:
+          requests:
+            cpu: "100m"

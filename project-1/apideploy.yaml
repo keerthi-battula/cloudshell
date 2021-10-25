@@ -1,0 +1,47 @@
+apiVersion: apps/v1          
+kind: Deployment              
+metadata:
+  name: todoapp    
+  labels:                     
+    app: server
+spec:
+  replicas: 1                 # No. of replicas/pods to run in this deployment
+  selector:
+    matchLabels:              # The deployment applies to any pods mayching the specified labels
+      app: server
+      tier: todoapp
+      track: stable
+  template:                   # Template for creating the pods in this deployment
+    metadata:
+      labels:                 # Labels that will be applied to each Pod in this deployment
+        app: server
+        tier: todoapp
+        track: stable
+    spec:                     # Spec for the containers that will be run in the Pods
+      containers:
+      - name: server
+        image:  gcr.io/sacred-bonus-328318/api
+        imagePullPolicy: IfNotPresent
+        
+        ports:
+          - name: http
+            containerPort: 5000 # The port that the container exposes
+
+---
+apiVersion: v1                # API version
+kind: Service                 # Type of the kubernetes resource
+metadata:                     
+  name: todoapp  # Name of the kubernetes resource
+  #labels:                     # Labels that will be applied to this resource
+    #app: server
+spec:              # The service will be exposed by opening a Port on each node and proxying it. 
+  selector:
+    app: server
+    tier: todoapp
+    track: stable   # The service exposes Pods with label `app=polling-app-server`
+  ports:                      # Forward incoming connections on port 8080 to the target port 8080
+  - protocol: TCP
+    port: 5000
+    targetPort: http
+  type: LoadBalancer
+  loadBalancerIP: 34.72.16.180

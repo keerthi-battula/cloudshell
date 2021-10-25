@@ -1,0 +1,5 @@
+project_name = "careful-mapper-323409"
+region = "us-central1"
+zone = "us-central1-a"
+cred_file = "/opt/mind_workspace/srebootcamp/pradeep_bansal/task10/careful-mapper-323409-ecc661f1062d.json"
+network_name = "terraform-sreboot01"

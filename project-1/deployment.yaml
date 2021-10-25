@@ -1,0 +1,94 @@
+apiVersion: apps/v1          
+kind: Deployment              
+metadata:
+  name: todoapp    
+  labels:                     
+    app: server
+spec:
+  replicas: 1                 # No. of replicas/pods to run in this deployment
+  selector:
+    matchLabels:              # The deployment applies to any pods mayching the specified labels
+      app: server
+      tier: todoapp
+      track: stable
+  template:                   # Template for creating the pods in this deployment
+    metadata:
+      labels:                 # Labels that will be applied to each Pod in this deployment
+        app: server
+        tier: todoapp
+        track: stable
+    spec:                     # Spec for the containers that will be run in the Pods
+      containers:
+      - name: server
+        image:  gcr.io/delta-repeater-322705/python_app
+        imagePullPolicy: IfNotPresent
+        
+        ports:
+          - name: http
+            containerPort: 5000 # The port that the container exposes
+
+---
+apiVersion: v1                # API version
+kind: Service                 # Type of the kubernetes resource
+metadata:                     
+  name: todoapp  # Name of the kubernetes resource
+  #labels:                     # Labels that will be applied to this resource
+    #app: server
+spec:              # The service will be exposed by opening a Port on each node and proxying it. 
+  selector:
+    app: server
+    tier: todoapp
+    track: stable   # The service exposes Pods with label `app=polling-app-server`
+  ports:                      # Forward incoming connections on port 8080 to the target port 8080
+  - protocol: TCP
+    port: 5000
+    targetPort: http
+  type: LoadBalancer
+  loadBalancerIP: 34.72.16.180
+  
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: forntend-deploy
+  #labels:
+    #app: server
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: server
+      tier: forntend-deploy
+      track: stable
+  template:
+    metadata:
+      labels:
+        app: server
+        tier: forntend-deploy
+        track: stable
+    spec:
+      containers:
+      - name: nginx
+        image: gcr.io/delta-repeater-322705/python_ui
+        imagePullPolicy: IfNotPresent
+        #command: ["sh", "-c", "app -frontend=true -backend-service=http://gceme-backend:8080 -port=80"]
+        
+      
+
+
+---     
+apiVersion: v1                  # API version
+kind: Service                   # Type of kubernetes resource
+metadata:                     
+  name: forntend-deploy  # Name of the kubernetes resource
+  #labels:                     # Labels that will be applied to this resource
+  # app: server     # Name of the kubernetes resource
+spec:              # Exposes the service by opening a port on each node
+  selector:
+    app: server 
+    tier: forntend-deploy  # Any Pod matching the label `app=polling-app-client` will be picked up by this service
+  ports:                        # Forward incoming connections on port 80 to the target port 80 in the Pod
+  - protocol: "TCP"
+    port: 8081
+    targetPort: 80
+  type: LoadBalancer

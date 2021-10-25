@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: web-app
+  labels:
+    app: my-webserver
+spec:
+  selector:
+    matchLabels:
+      app: my-webserver
+      tier: web
+  template:
+    metadata:
+      labels:
+        app: my-webserver
+        tier: web
+    spec:
+      containers:
+      - name: webserver
+        image: gcr.io/myproject1-321806/my-webserver
+        ports:
+        - containerPort: 8080
+        resources:
+          requests:
+            cpu: 100m

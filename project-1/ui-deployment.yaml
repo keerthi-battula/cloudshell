@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: forntend-deploy
+  #labels:
+    #app: server
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: server
+      tier: forntend-deploy
+      track: stable
+  template:
+    metadata:
+      labels:
+        app: server
+        tier: forntend-deploy
+        track: stable
+    spec:
+      containers:
+      - name: nginx
+        image: gcr.io/wise-cycling-321405/ui-image
+        imagePullPolicy: Always
+        #command: ["sh", "-c", "app -frontend=true -backend-service=http://gceme-backend:8080 -port=80"]
+        

@@ -1,0 +1,30 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend-new
+spec:
+  selector:
+    matchLabels:
+      app: hello-new
+      tier: frontend-new
+      track: stable
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: hello-new
+        tier: frontend-new
+        track: stable
+    spec:
+      containers:
+        - name: nginx
+          image: keerthibattula/ui-new
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 80
+          resources:
+            requests:
+              cpu: "100m"
+
+          
